@@ -1,0 +1,27 @@
+[build-system]
+requires = ["setuptools>=45", "wheel", "setuptools_scm[toml]>=6.2"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "vllm-bench"
+version = "0.1.0"
+description = "Benchmarking tool for vLLM inference servers"
+readme = "README.md"
+requires-python = ">=3.8"
+license = {text = "Apache-2.0"}
+authors = [
+    {name = "Your Name", email = "your.email@example.com"}
+]
+dependencies = [
+    "regex",
+    "aiohttp",
+    "numpy",
+    "tqdm",
+    "transformers",
+]
+
+[project.scripts]
+vllm-bench = "vllm.entrypoints.cli.main:main"
+
+[tool.setuptools]
+packages = ["vllm"]
